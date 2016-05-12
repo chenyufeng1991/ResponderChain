@@ -87,6 +87,13 @@
                         <action selector="buttonCanBecomeFirstResponder:" destination="-1" eventType="touchUpInside" id="A5u-Ak-PQP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZL-oS-neb">
+                    <rect key="frame" x="16" y="513" width="120" height="30"/>
+                    <state key="normal" title="获取下一个响应者"/>
+                    <connections>
+                        <action selector="getNextResponder:" destination="-1" eventType="touchUpInside" id="guA-70-D9Z"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

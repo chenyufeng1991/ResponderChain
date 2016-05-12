@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "ThirdViewController.h"
+#import "FourthViewController.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -51,9 +52,19 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ThirdViewController *third = [[ThirdViewController alloc] init];
-    third.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:third animated:YES];
+
+    if (indexPath.row == 0)
+    {
+        ThirdViewController *third = [[ThirdViewController alloc] init];
+        third.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:third animated:YES];
+    }
+    if (indexPath.row == 1)
+    {
+        FourthViewController *fourth = [[FourthViewController alloc] init];
+        [self presentViewController:fourth animated:YES completion:nil];
+    }
+
 }
 
 
