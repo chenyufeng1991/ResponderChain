@@ -22,6 +22,7 @@
 //    [self.nameTextField addTarget:self action:@selector(nameTextFieldEnd) forControlEvents:UIControlEventEditingDidEnd];
 
     self.nameTextField.tag = 101;
+    self.passwordTextField.tag = 102;
     [self.nameTextField becomeFirstResponder];
 
 }
@@ -55,9 +56,9 @@
     NSLog(@"nameTextFieldEnd");
 }
 
+// 找到当前页面中谁是第一响应者
 - (IBAction)whoIsFirstResponder:(id)sender
 {
-    NSLog(@"%@",self.view.subviews);
     for (UIView *view in self.view.subviews)
     {
         if ([view isFirstResponder])
@@ -73,6 +74,22 @@
     }
 }
 
+// 设置nameTextField 101为第一响应者
+- (IBAction)setNameToFirstResponder:(id)sender
+{
+    if (![self.nameTextField isFirstResponder])
+    {
+        if ([self.nameTextField canBecomeFirstResponder])
+        {
+            [self.nameTextField becomeFirstResponder];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"成功设置101为第一响应者" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }
+}
 
 
 @end
