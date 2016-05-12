@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThirdViewController">
             <connections>
+                <outlet property="judgeThisButton" destination="zUk-0q-2hJ" id="gfX-uv-QLd"/>
                 <outlet property="nameTextField" destination="lHb-gF-dct" id="naU-38-erk"/>
                 <outlet property="passwordTextField" destination="jUS-op-0qD" id="kkk-dQ-XSl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -66,10 +67,24 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oue-Uh-Dhr">
-                    <rect key="frame" x="16" y="438" width="143" height="30"/>
+                    <rect key="frame" x="16" y="405" width="143" height="30"/>
                     <state key="normal" title="取消101为第一响应者"/>
                     <connections>
                         <action selector="cancelNameFromFirstResponder:" destination="-1" eventType="touchUpInside" id="fck-RC-e0W"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JE3-V0-eIa">
+                    <rect key="frame" x="16" y="437" width="179" height="30"/>
+                    <state key="normal" title="设置self.view为第一响应者"/>
+                    <connections>
+                        <action selector="setSelfViewToFirstResponder:" destination="-1" eventType="touchUpInside" id="HqO-Mg-wFB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUk-0q-2hJ">
+                    <rect key="frame" x="16" y="475" width="210" height="30"/>
+                    <state key="normal" title="判断该按钮能否成为第一响应者"/>
+                    <connections>
+                        <action selector="buttonCanBecomeFirstResponder:" destination="-1" eventType="touchUpInside" id="A5u-Ak-PQP"/>
                     </connections>
                 </button>
             </subviews>

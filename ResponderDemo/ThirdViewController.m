@@ -10,6 +10,9 @@
 
 @interface ThirdViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *judgeThisButton;
+
+
 @end
 
 @implementation ThirdViewController
@@ -98,6 +101,49 @@
         [self showDialog:nil message:@"取消101为第一响应者"];
     }
 }
+
+//设置self.view为第一响应者
+- (IBAction)setSelfViewToFirstResponder:(id)sender
+{
+    if ([self.view canBecomeFirstResponder])
+    {
+        [self.view becomeFirstResponder];
+        if ([self.view isFirstResponder])
+        {
+            [self showDialog:nil message:@"设置self.view为第一响应者成功"];
+        }
+        else
+        {
+            [self showDialog:nil message:@"设置self.view为第一响应者失败"];
+        }
+    }
+    else
+    {
+        [self showDialog:nil message:@"不能设置self.view第一响应者"];
+    }
+}
+
+- (IBAction)buttonCanBecomeFirstResponder:(id)sender
+{
+    if ([self.judgeThisButton canBecomeFirstResponder])
+    {
+        [self.judgeThisButton becomeFirstResponder];
+        if ([self.judgeThisButton isFirstResponder ])
+        {
+            [self showDialog:nil message:@"设置该按钮为第一响应者成功"];
+        }
+        else
+        {
+            [self showDialog:nil message:@"设置该按钮为第一响应者失败"];
+        }
+    }
+    else
+    {
+        [self showDialog:nil message:@"不能设置该按钮为第一响应者"];
+    }
+}
+
+
 
 - (void)showDialog:(NSString *)title message:(NSString *)message
 {
