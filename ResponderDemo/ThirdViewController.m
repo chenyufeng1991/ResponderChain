@@ -21,6 +21,7 @@
 //    [self.nameTextField addTarget:self action:@selector(nameTextFieldBegin) forControlEvents:UIControlEventEditingDidBegin];
 //    [self.nameTextField addTarget:self action:@selector(nameTextFieldEnd) forControlEvents:UIControlEventEditingDidEnd];
 
+    self.view.tag = 100;
     self.nameTextField.tag = 101;
     self.passwordTextField.tag = 102;
     [self.nameTextField becomeFirstResponder];
@@ -59,17 +60,18 @@
 // 找到当前页面中谁是第一响应者
 - (IBAction)whoIsFirstResponder:(id)sender
 {
+    if ([self.view isFirstResponder])
+    {
+        [self showDialog:nil message:[NSString stringWithFormat:@"第一响应者是%ld",(long)self.view.tag]];
+        return;
+    }
+
     for (UIView *view in self.view.subviews)
     {
         if ([view isFirstResponder])
         {
-            NSLog(@"该界面第一响应者是：%ld",(long)view.tag);
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"第一响应者是：%ld",(long)view.tag] preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-            break;
+            [self showDialog:nil message:[NSString stringWithFormat:@"第一响应者是%ld",(long)view.tag]];
+            return;
         }
     }
 }
@@ -82,13 +84,28 @@
         if ([self.nameTextField canBecomeFirstResponder])
         {
             [self.nameTextField becomeFirstResponder];
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"成功设置101为第一响应者" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
+            [self showDialog:nil message:@"设置101为第一响应者"];
         }
     }
+}
+
+//取消nameTextField 101为第一响应者
+- (IBAction)cancelNameFromFirstResponder:(id)sender
+{
+    if ([self.nameTextField isFirstResponder])
+    {
+        [self.nameTextField resignFirstResponder];
+        [self showDialog:nil message:@"取消101为第一响应者"];
+    }
+}
+
+- (void)showDialog:(NSString *)title message:(NSString *)message
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title  message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 

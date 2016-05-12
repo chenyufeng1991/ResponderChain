@@ -65,6 +65,13 @@
                         <action selector="setNameToFirstResponder:" destination="-1" eventType="touchUpInside" id="uVk-dB-eFE"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oue-Uh-Dhr">
+                    <rect key="frame" x="16" y="438" width="143" height="30"/>
+                    <state key="normal" title="取消101为第一响应者"/>
+                    <connections>
+                        <action selector="cancelNameFromFirstResponder:" destination="-1" eventType="touchUpInside" id="fck-RC-e0W"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
