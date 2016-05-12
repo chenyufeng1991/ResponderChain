@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *judgeThisButton;
 
-
 @end
 
 @implementation ThirdViewController
@@ -21,43 +20,9 @@
 {
     [super viewDidLoad];
 
-//    [self.nameTextField addTarget:self action:@selector(nameTextFieldBegin) forControlEvents:UIControlEventEditingDidBegin];
-//    [self.nameTextField addTarget:self action:@selector(nameTextFieldEnd) forControlEvents:UIControlEventEditingDidEnd];
-
     self.view.tag = 100;
     self.nameTextField.tag = 101;
     self.passwordTextField.tag = 102;
-    [self.nameTextField becomeFirstResponder];
-
-}
-
-- (void)nameTextFieldBegin
-{
-    if ([self.nameTextField isFirstResponder])
-    {
-        NSLog(@"%s,nameTextField是第一响应",__FUNCTION__);
-    }
-    else
-    {
-        NSLog(@"%s,nameTextField不是第一响应",__FUNCTION__);
-    }
-
-    NSLog(@"nameTextFieldBegin");
-}
-
-- (void)nameTextFieldEnd
-{
-
-    if ([self.nameTextField isFirstResponder])
-    {
-        NSLog(@"%s,nameTextField是第一响应",__FUNCTION__);
-    }
-    else
-    {
-        NSLog(@"%s,nameTextField不是第一响应",__FUNCTION__);
-    }
-
-    NSLog(@"nameTextFieldEnd");
 }
 
 // 找到当前页面中谁是第一响应者
@@ -123,6 +88,7 @@
     }
 }
 
+//判断按钮能否成为第一响应
 - (IBAction)buttonCanBecomeFirstResponder:(id)sender
 {
     if ([self.judgeThisButton canBecomeFirstResponder])
