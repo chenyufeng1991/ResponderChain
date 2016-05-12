@@ -64,6 +64,9 @@
         {
             NSLog(@"该界面第一响应者是：%ld",(long)view.tag);
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"第一响应者是：%ld",(long)view.tag] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
             break;
         }
