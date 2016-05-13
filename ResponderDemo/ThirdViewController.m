@@ -109,20 +109,6 @@
     }
 }
 
-
-- (IBAction)getNextResponder:(id)sender
-{
-    UIResponder *responder = [self.nameTextField nextResponder];
-
-    while (responder != nil) {
-        responder = [responder nextResponder];
-    }
-
-
-}
-
-
-
 - (void)showDialog:(NSString *)title message:(NSString *)message
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title  message:message preferredStyle:UIAlertControllerStyleAlert];
