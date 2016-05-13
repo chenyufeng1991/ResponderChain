@@ -36,10 +36,17 @@
                         <action selector="getNextResponder:" destination="-1" eventType="touchUpInside" id="jnd-1l-sea"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjd-GQ-Cew">
+                    <rect key="frame" x="37" y="363" width="277" height="30"/>
+                    <state key="normal" title="在VC对象和UIApplication中捕获触摸事件"/>
+                    <connections>
+                        <action selector="captureEvent:" destination="-1" eventType="touchUpInside" id="4tM-f8-NcD"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="53" y="480"/>
+            <point key="canvasLocation" x="436" y="509"/>
         </view>
     </objects>
 </document>
