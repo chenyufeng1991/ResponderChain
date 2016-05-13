@@ -52,7 +52,7 @@
     UIResponder *responder = sender;
     while (responder != nil)
     {
-        if ([responder isKindOfClass:[self class]])           
+        if ([responder isKindOfClass:[self class]])
         {
             NSLog(@"事件传递到该类VC,可以执行相应操作");
         }
