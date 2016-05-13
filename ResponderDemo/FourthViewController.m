@@ -45,7 +45,7 @@
 
 /**
  * 在按钮点击后，在消息传递中当传到该VC对象以及UIApplication时，捕获该事件。
- 一条链上的对象都可以获得响应；
+ 一条链上的对象可以对同一事件作出反应。
  */
 - (IBAction)captureEvent:(id)sender
 {
@@ -64,6 +64,17 @@
         responder = [responder nextResponder];
     }
 }
+
+/**
+ *  这里先捕获触摸，停止事件分发，所以AppDelegate中重写的touchesBegan不会有反应。除非这里使用super.
+ *
+ */
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    NSLog(@"%s",__FUNCTION__);
+}
+
 
 
 @end

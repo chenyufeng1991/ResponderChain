@@ -40,4 +40,10 @@
     return YES;
 }
 
+//这里的优先级最低
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
+{
+     NSLog(@"%s",__FUNCTION__);
+}
+
 @end

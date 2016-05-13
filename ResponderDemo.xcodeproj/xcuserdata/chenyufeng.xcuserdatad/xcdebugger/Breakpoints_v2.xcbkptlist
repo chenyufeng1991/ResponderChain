@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ResponderDemo/FourthViewController.m"
-            timestampString = "484813539.102506"
+            timestampString = "484815718.70291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-captureEvent:"
             landmarkType = "5">
          </BreakpointContent>
