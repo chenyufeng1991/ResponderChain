@@ -64,7 +64,7 @@
         responder = [responder nextResponder];
     }
 }
-
+    
 /**
  *  这里先捕获触摸，停止事件分发，所以AppDelegate中重写的touchesBegan不会有反应。除非这里使用super.
  *
